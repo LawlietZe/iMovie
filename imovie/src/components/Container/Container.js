@@ -3,15 +3,6 @@ import { Card, WhiteSpace } from 'antd-mobile';
 import axios from 'axios';
 import http from '../../server'
 
-let data = [{
-    title: "黑泽明的道路",
-    image: "https://img3.doubanio.com/view/subject/l/public/s3569841.jpg",
-    year : "2011"
-},{
-    title: "黑泽明的道路",
-    image: "https://img3.doubanio.com/view/subject/l/public/s3569841.jpg",
-    year : "2011"
-}]
 class Container extends Component {
     constructor(props){
         super(props);
@@ -48,9 +39,9 @@ class Container extends Component {
                         extra={<span>出版年:{item.year}</span>}
                     />
                     <Card.Body>
-                        <div>This is content of `Card`</div>
+                        <div><img src={item.images.small} ></img></div>
                     </Card.Body>
-                    <Card.Footer content="footer content" extra={<div>extra footer content</div>} />
+                    <Card.Footer content={item.rating.average} extra={<div>{item.genres[0]}</div>} />
                     </Card>
                     </div>
                 )

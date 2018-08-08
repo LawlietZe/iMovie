@@ -5,12 +5,24 @@
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "antd-mobile": "^2.2.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "babel-plugin-import": "^1.8.0",
+    "css-loader": "^1.0.0",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "qs": "^6.5.2",
+    "react-app-rewired": "^1.5.2",
+    "style-loader": "^0.22.0"
+  },
+  "proxy": "https://api.douban.com"
 }

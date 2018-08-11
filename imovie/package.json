@@ -25,5 +25,5 @@
     "style-loader": "^0.22.0"
   },
   "proxy": "https://api.douban.com",
-  "homepage": "https://lawlietze.github.io/testServer"
+  "homepage": "http://192.3.229.28/"
 }

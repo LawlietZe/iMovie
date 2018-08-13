@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, WhiteSpace } from 'antd-mobile';
 import axios from 'axios';
-import http from '../../server'
+import api from '../../apis'
 
 class Container extends Component {
     constructor(props){
@@ -12,7 +12,8 @@ class Container extends Component {
     }
     componentDidMount(){
         let _This = this;
-        axios.get('/v2/movie/in_theaters')
+        debugger
+        axios.get('v2/movie/in_theaters')
         .then(function (response) {
             console.log(response);
             _This.setState({ result: response.data.subjects });
@@ -39,7 +40,7 @@ class Container extends Component {
                         extra={<span>出版年:{item.year}</span>}
                     />
                     <Card.Body>
-                        <div><img src={item.images.small} ></img></div>
+                        <div><img alt='movieImg' src={item.images.small} ></img></div>
                     </Card.Body>
                     <Card.Footer content={item.rating.average} extra={<div>{item.genres[0]}</div>} />
                     </Card>

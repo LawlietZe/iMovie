@@ -1,5 +1,5 @@
 # iMovie
-![img](http://img.hb.aicdn.com/f4597a4209cc4205541bcbba461c29615cec89886489-W5nxkt_fw658)
+![img](http://img.hb.aicdn.com/f4597a4209cc4205541bcbba461c29615cec89886489-W5nxkt_fw658 =200x300)
 
 一个基于react + antd + 全网开放接口聚合而成的轻量级电影信息web app
  

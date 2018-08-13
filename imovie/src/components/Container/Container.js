@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, WhiteSpace } from 'antd-mobile';
 import axios from 'axios';
 import http from '../../server'
+import './Container.less';
 
 class Container extends Component {
     constructor(props){
@@ -40,8 +41,15 @@ class Container extends Component {
                     />
                     <Card.Body>
                         <div><img src={item.images.small} ></img></div>
+                        <div>评分:
+                            {item.rating.average > 7.5 ?
+                            <span className='highRating'>{item.rating.average}</span>
+                            :
+                            <span>{item.rating.average}</span>
+                            }
+                        </div>
                     </Card.Body>
-                    <Card.Footer content={item.rating.average} extra={<div>{item.genres[0]}</div>} />
+                    <Card.Footer content={item.original_title} extra={<div>{item.genres[0]}</div>} />
                     </Card>
                     </div>
                 )

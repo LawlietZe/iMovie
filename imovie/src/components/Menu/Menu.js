@@ -5,14 +5,14 @@ import './Menu.less';
 const data = [
   {
     value: '1',
-    label: 'Food',
+    label: '近期热映',
   }, {
     value: '2',
-    label: 'Supermarket',
+    label: '影库搜索',
   },
   {
     value: '3',
-    label: 'Extra',
+    label: '热门影评',
     isLeaf: true,
   },
 ];

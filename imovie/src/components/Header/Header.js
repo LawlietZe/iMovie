@@ -21,7 +21,6 @@ class Header extends Component {
         return (
             <div>
                 <IMenu></IMenu>
-                <Button>All Start Here</Button>
             </div>
         );
     }

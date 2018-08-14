@@ -1,0 +1,30 @@
+{
+  "name": "imovie",
+  "version": "1.0.0",
+  "description": "a ligh weight movie news app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LawlietZe/iMovie.git"
+  },
+  "author": "why",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LawlietZe/iMovie/issues"
+  },
+  "homepage": "https://github.com/LawlietZe/iMovie#readme",
+  "dependencies": {
+    "antd-mobile": "^2.2.2"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.8.0",
+    "css-loader": "^1.0.0",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "react-app-rewired": "^1.5.2",
+    "style-loader": "^0.22.0"
+  }
+}

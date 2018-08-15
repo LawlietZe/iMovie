@@ -19,7 +19,8 @@ feature:
   - 选中tag之后过滤出具有该tag
 -----------------------------
 #### 下一版本新功能
-点击电影进入详情
+1. [bug] loading icon
+2. [feature] 点击电影进入详情 (list + new page + 电影条目api)
 
 
 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Button } from 'antd-mobile'
 import IMenu from '../Menu/Menu';
 import TabsComponent from '../Tabs/Tabs';
 class Header extends Component {

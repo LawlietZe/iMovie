@@ -68,10 +68,10 @@ class Container extends Component {
                             extra={<span>出版年:{item.year}</span>}
                         />
                         <Card.Body>
-                            <div><img src={item.images.small} ></img></div>
+                            <div><img alt="movieImage" src={item.images.small} ></img></div>
                             <div>评分:
                                 {item.rating.average > 7 ?
-                                <span className='highRating' className='highRating'>{item.rating.average}</span>
+                                <span className='highRating'>{item.rating.average}</span>
                                 :
                                 <span>{item.rating.average}</span>
                                 }

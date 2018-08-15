@@ -27,3 +27,12 @@ feature:
 api: 
 
 https://api.douban.com/v2/movie/search?q=
+
+安装: 
+```
+cd imovie 
+
+npm install
+
+npm start
+```

@@ -1,5 +1,5 @@
 # iMovie
-![img](http://img.hb.aicdn.com/f4597a4209cc4205541bcbba461c29615cec89886489-W5nxkt_fw658=50x50)
+![img](https://ss0.baidu.com/73x1bjeh1BF3odCf/it/u=3880303282,404230604&fm=85&s=7FAC346257B57786A06CC2C60200E0A3)
 
 一个基于react + antd + 全网开放接口聚合而成的轻量级电影信息web app
  
@@ -17,10 +17,22 @@ feature:
 #### 随机tag
   - 随机出现几个tag
   - 选中tag之后过滤出具有该tag
-
+-----------------------------
+#### 下一版本新功能
+1. [bug] loading icon
+2. [feature] 点击电影进入详情 (list + new page + 电影条目api)
 
 
 
 api: 
 
 https://api.douban.com/v2/movie/search?q=
+
+安装: 
+```
+cd imovie 
+
+npm install
+
+npm start
+```

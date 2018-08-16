@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { SearchBar, Card, WhiteSpace} from 'antd-mobile';
 import axios from 'axios';
 import  './Search.css';
+import api from '../../apis'
 
 class Search extends React.Component {
   state = {
@@ -22,7 +23,7 @@ class Search extends React.Component {
   }
   onSubmit = ()=> {
     let _This = this;
-        axios.get(`/v2/movie/search?q=${_This.state.value}`)
+    axios.get(`${api}/v2/movie/search?q=${_This.state.value}`)
         .then(function (response) {
             console.log(response);
             _This.setState({ results: response.data.subjects });

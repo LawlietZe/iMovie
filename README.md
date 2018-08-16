@@ -22,7 +22,8 @@ feature:
 1. [bug] loading icon
 2. [feature] 点击电影进入详情 (list + new page + 电影条目api)
 
-
+#### 更新日志
+2018/8/16----更新搜索loading以及背景
 
 api: 
 

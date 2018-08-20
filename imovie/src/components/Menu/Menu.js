@@ -1,7 +1,7 @@
 /* eslint global-require:0, no-nested-ternary:0 */
 import React from 'react';
 import { Menu, ActivityIndicator, NavBar } from 'antd-mobile';
-import './Menu.less';
+import './Menu.css';
 const data = [
   {
     value: '1',

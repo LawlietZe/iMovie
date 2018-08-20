@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Card, WhiteSpace } from 'antd-mobile';
-import {Link} from 'react-router-dom';
 import axios from 'axios';
-import './Container.css';
+import './NorthAmercia.css';
 
-class Container extends Component {
+class NorthAmercia extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -14,7 +13,7 @@ class Container extends Component {
     }
     componentDidMount(){
         let _This = this;
-        axios.get('/v2/movie/in_theaters?city=上海')
+        axios.get('/v2/movie/us_box')
         .then(function (response) {
             console.log(response);
             _This.setState({ result: response.data.subjects });
@@ -64,25 +63,21 @@ class Container extends Component {
                         <WhiteSpace size="lg" />
                         <Card full>
                         <Card.Header
-                            title={item.title}
+                            title={item.subject.title}
                             thumb="http://img.hb.aicdn.com/f4597a4209cc4205541bcbba461c29615cec89886489-W5nxkt_fw658"
-                            extra={<span>出版年:{item.year}</span>}
+                            extra={<span>排名:{item.rank}</span>}
                         />
-                        <Link to={ {pathname:'/detail',
-                                    id:item.id }
-                            }>
-                            <Card.Body>
-                                <div><img alt="movieImage" src={item.images.small} ></img></div>
-                                <div>评分:
-                                    {item.rating.average > 7 ?
-                                    <span className='highRating'>{item.rating.average}</span>
-                                    :
-                                    <span>{item.rating.average}</span>
-                                    }
-                                </div>
-                            </Card.Body>
-                        </Link>
-                        <Card.Footer content={item.original_title} extra={<div>{item.genres[0]}</div>}>
+                        <Card.Body>
+                            <div><img alt="movieImage" src={item.subject.images.small} ></img></div>
+                            <div>评分:
+                                {item.subject.rating.average > 7 ?
+                                <span className='highRating'>{item.subject.rating.average}</span>
+                                :
+                                <span>{item.subject.rating.average}</span>
+                                }
+                            </div>
+                        </Card.Body>
+                        <Card.Footer content={item.subject.original_title} extra={<div>{item.subject.genres[0]}</div>}>
                         </Card.Footer>
                         </Card>
                         </div>
@@ -93,4 +88,4 @@ class Container extends Component {
         )
     }
 }
-export default Container;
+export default NorthAmercia;

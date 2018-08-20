@@ -1,6 +1,7 @@
 import React from 'react';
 import { SearchBar, Card, WhiteSpace, Button} from 'antd-mobile';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 import  './Search.css';
 
 class Search extends React.Component {
@@ -85,6 +86,10 @@ class Search extends React.Component {
                         thumb="http://img.hb.aicdn.com/f4597a4209cc4205541bcbba461c29615cec89886489-W5nxkt_fw658"
                         extra={<span>出版年:{item.year}</span>}
                     />
+                    <Link to={ 
+                        {pathname:'/detail',
+                        id:item.id }
+                    }>
                     <Card.Body>
                         <div><img src={item.images.small} ></img></div>
                         <div>评分:
@@ -95,6 +100,7 @@ class Search extends React.Component {
                             }
                         </div>
                     </Card.Body>
+                    </Link>
                     <Card.Footer content={item.original_title} extra={<div>{item.genres[0]}</div>}>
                     </Card.Footer>
                     </Card>

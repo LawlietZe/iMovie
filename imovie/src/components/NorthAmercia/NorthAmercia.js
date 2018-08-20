@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, WhiteSpace } from 'antd-mobile';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import './NorthAmercia.css';
 
@@ -67,6 +68,10 @@ class NorthAmercia extends Component {
                             thumb="http://img.hb.aicdn.com/f4597a4209cc4205541bcbba461c29615cec89886489-W5nxkt_fw658"
                             extra={<span>排名:{item.rank}</span>}
                         />
+                        <Link to={ 
+                            {pathname:'/detail',
+                            id:item.subject.id }
+                        }>
                         <Card.Body>
                             <div><img alt="movieImage" src={item.subject.images.small} ></img></div>
                             <div>评分:
@@ -77,6 +82,7 @@ class NorthAmercia extends Component {
                                 }
                             </div>
                         </Card.Body>
+                        </Link>
                         <Card.Footer content={item.subject.original_title} extra={<div>{item.subject.genres[0]}</div>}>
                         </Card.Footer>
                         </Card>

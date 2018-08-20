@@ -77,6 +77,14 @@ class Detail extends Component {
                         <span>{result.rating.average}</span>
                         }
                     </div>
+                    <div>导演: 
+                        {result.directors.map(function(item,index){
+                            return (
+                                <span key={index}>{item.name}</span>
+                            )
+                        })
+                        }
+                    </div>
                     <div className='profileMsg'><span>简介：</span>{result.summary}</div>
                 </Card.Body>
                 <Card.Footer content={result.original_title} extra={<div>{result.genres[0]}</div>}>

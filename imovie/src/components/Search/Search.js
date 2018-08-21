@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchBar, Card, WhiteSpace, Button} from 'antd-mobile';
+import { SearchBar, Card, WhiteSpace} from 'antd-mobile';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import  './Search.css';
@@ -41,10 +41,10 @@ class Search extends React.Component {
     <div className='SearchContainer'>
       <SearchBar 
         placeholder="输入电影关键字" 
-        ref={ref => this.autoFocusInst = ref}
+        ref={ref => this.autoFocusInst = ref} 
         value={this.state.value}
         onChange={this.onChange}
-        onSubmit={this.onSubmit} 
+        onSubmit={this.onSubmit}
       />
       <WhiteSpace />
         {

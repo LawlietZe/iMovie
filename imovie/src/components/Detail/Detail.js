@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Card, WhiteSpace, NavBar, Icon } from 'antd-mobile';
+import { Card, WingBlank, NavBar, Icon, Carousel } from 'antd-mobile';
 import './Detail.css';
 class Detail extends Component {
     constructor(props) {
@@ -90,6 +90,42 @@ class Detail extends Component {
                 <Card.Footer content={result.original_title} extra={<div>{result.genres[0]}</div>}>
                 </Card.Footer>
                 </Card>
+                <WingBlank>
+                <Carousel className="space-carousel"
+                    frameOverflow="visible"
+                    cellSpacing={10}
+                    slideWidth={0.8}
+                    autoplay
+                    infinite
+                    beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
+                    afterChange={index => this.setState({ slideIndex: index })}
+                    >
+                    {result.casts.map((val, index) => (
+                        <a
+                        key={val.name}
+                        // href={val.alt}
+                        style={{
+                            display: 'block',
+                            position: 'relative',
+                            top: this.state.slideIndex === index ? -10 : 0,
+                            height: this.state.imgHeight,
+                            boxShadow: '2px 1px 1px rgba(0, 0, 0, 0.2)',
+                        }}
+                        >
+                        <img
+                            src={val.avatars.small}
+                            alt="val.name"
+                            style={{ width: '100%', verticalAlign: 'top' }}
+                            onLoad={() => {
+                            // fire window resize event to change height
+                            window.dispatchEvent(new Event('resize'));
+                            this.setState({ imgHeight: 'auto' });
+                            }}
+                        />
+                        </a>
+                    ))}
+                </Carousel>
+                </WingBlank>
                 </div>
                 }
             </div>

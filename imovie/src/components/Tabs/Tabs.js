@@ -6,7 +6,7 @@ import NorthAmercia from '../NorthAmercia/NorthAmercia';
 import  './Tabs.css';
 
 const tabs = [
-  { title: <Badge text={'3'}>影池搜索</Badge> },
+  { title: <Badge text={'热'}>影池搜索</Badge> },
   { title: <Badge text={'今日(20)'}>国内院线</Badge> },
   { title: <Badge text={'new'}>北美票房榜</Badge> },
 ];

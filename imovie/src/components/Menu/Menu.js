@@ -2,19 +2,15 @@
 import React from 'react';
 import { Menu, ActivityIndicator, NavBar } from 'antd-mobile';
 import './Menu.css';
+import { Link } from 'react-router-dom'
 const data = [
   {
     value: '1',
-    label: '近期热门'
+    label: '主站',
   }, {
     value: '2',
-    label: '影库搜索',
-  },
-  {
-    value: '3',
-    label: '热门影评',
-    isLeaf: true,
-  },
+    label: <Link to="/detail">关于</Link>,
+  }
 ];
 
 class IMenu extends React.Component {

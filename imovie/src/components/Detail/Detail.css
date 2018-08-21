@@ -1,3 +1,11 @@
 .am-navbar-light{
     color: #fff;
 }
+.space-carousel {
+    padding: 16px;
+    background: #828282;
+    overflow: hidden;
+}
+.profileMsg{
+    padding-top: 10px;
+}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, WhiteSpace } from 'antd-mobile';
+import { Card, WhiteSpace, Button, WingBlank} from 'antd-mobile';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import './Container.css';
@@ -9,15 +9,44 @@ class Container extends Component {
         super(props);
         this.state = {
             result: null,
-            loading: true
+            loading: true,
+            start: 0,
+            total: 0,
+            moreBtn: true
         };
+        this.loadMoreInfo = this.loadMoreInfo.bind(this);
+    }
+    loadMoreInfo(){
+        this.setState({ loading: true });
+        var _started = this.state.start + 20;
+        this.setState({ start: _started});
+        var _This =this;
+        if(_started < this.state.total){
+            axios.get(`/v2/movie/in_theaters?city=上海&start=${_started}`)
+            .then(function (response) {
+                console.log(response);
+                const updateResults = [
+                    ..._This.state.result,
+                    ...response.data.subjects
+                ];
+                _This.setState({ result: updateResults });
+                _This.setState({ loading: false });
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        }else{
+            _This.setState({ loading: false });
+            this.setState({ moreBtn: false });
+        }   
     }
     componentDidMount(){
         let _This = this;
-        axios.get('/v2/movie/in_theaters?city=上海')
+        axios.get(`/v2/movie/in_theaters?city=上海${_This.state.start}`)
         .then(function (response) {
             console.log(response);
             _This.setState({ result: response.data.subjects });
+            _This.setState({ total: response.data.total });
             _This.setState({ loading: false });
         })
         .catch(function (error) {
@@ -30,10 +59,10 @@ class Container extends Component {
             return null;
         }
         return(
-            <div>
+            <div  style={{ width: '100%' }}>
                 {this.state.loading
                 ?
-                <div>
+                <WingBlank size="sm">
                     <Card full>
                         <Card.Body>
                             <div className="skeleton">
@@ -56,7 +85,7 @@ class Container extends Component {
                             </div>
                         </Card.Body>
                     </Card>
-                </div>
+                </WingBlank>
                 :
                 result.map(function(item, index){
                     return (
@@ -88,6 +117,11 @@ class Container extends Component {
                         </div>
                     )
                     })
+                }
+                {this.state.moreBtn?
+                    <Button onClick={()=> this.loadMoreInfo()}>点击加载更多</Button>
+                :
+                    <Button>已经到底了鸭</Button>
                 }
             </div>
         )

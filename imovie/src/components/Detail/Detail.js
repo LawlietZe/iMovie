@@ -77,7 +77,7 @@ class Detail extends Component {
                         <span>{result.rating.average}</span>
                         }
                     </div>
-                    <div>导演: 
+                    <div class='directors'>导演: 
                         {result.directors.map(function(item,index){
                             return (
                                 <span key={index}>{item.name}</span>
@@ -85,7 +85,15 @@ class Detail extends Component {
                         })
                         }
                     </div>
-                    <div className='profileMsg'><span>简介：</span>{result.summary}</div>
+                    <div>类型: 
+                        {result.genres.map(function(item,index){
+                            return (
+                                <span className='tag' key={index}>{item}</span>
+                            )
+                        })
+                        }
+                    </div>
+                    <div className='profileMsg'><span>简介：</span><br />{result.summary}</div>
                 </Card.Body>
                 <Card.Footer content={result.original_title} extra={<div>{result.genres[0]}</div>}>
                 </Card.Footer>

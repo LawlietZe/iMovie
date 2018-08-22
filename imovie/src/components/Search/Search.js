@@ -1,15 +1,46 @@
 import React from 'react';
-import { SearchBar, Card, WhiteSpace} from 'antd-mobile';
+import { SearchBar, Card, WhiteSpace, Button} from 'antd-mobile';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import  './Search.css';
 
 class Search extends React.Component {
-  state = {
-    value: '',
-    results: null,
-    start: 0
-  };
+    constructor(props){
+        super(props);
+        this.state = {
+            value: '',
+            results: null,
+            start: 0,
+            total: 0,
+            moreBtn: false,
+            loading: null
+          };
+        this.loadMoreInfo = this.loadMoreInfo.bind(this);
+    }
+    loadMoreInfo(){
+        this.setState({ loading: true });
+        var _started = this.state.start + 20;
+        this.setState({ start: _started});
+        var _This =this;
+        if(_started < this.state.total){
+            axios.get(`/v2/movie/search?q=${_This.state.value}&start=${_started}`)
+            .then(function (response) {
+                console.log(response);
+                const updateResults = [
+                    ..._This.state.results,
+                    ...response.data.subjects
+                ];
+                _This.setState({ results: updateResults });
+                _This.setState({ loading: false });
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        }else{
+            _This.setState({ loading: false });
+            this.setState({ moreBtn: false });
+        }   
+    }
   componentDidMount() {
     this.autoFocusInst.focus();
   }
@@ -24,12 +55,14 @@ class Search extends React.Component {
   }
   onSubmit = ()=> {
     let _This = this;
-        _This.setState({ loading: true });
+    this.setState({ loading: true });
+        this.setState({ moreBtn: true });
         axios.get(`/v2/movie/search?q=${_This.state.value}`)
         .then(function (response) {
             console.log(response);
             _This.setState({ results: response.data.subjects });
             _This.setState({ loading: false });
+            _This.setState({ total: response.data.total });
         })
         .catch(function (error) {
             console.log(error);
@@ -107,6 +140,11 @@ class Search extends React.Component {
                     </div>
                 )
             })
+        }
+        {this.state.moreBtn?
+            <Button onClick={()=> this.loadMoreInfo()}>点击加载更多</Button>
+        :
+            <span></span>
         }
     </div>);
   }

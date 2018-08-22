@@ -9,3 +9,16 @@
 .profileMsg{
     padding-top: 10px;
 }
+.tag{
+    margin: 0 5px;
+    background: #B19693;
+    color: #fff;
+    padding: 2px;
+}
+.directors{
+    margin: 10px 0px;
+}
+.profileMsg{
+    margin: 10px 0px;
+    background-color: #FCFAF2;
+}

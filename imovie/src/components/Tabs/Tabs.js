@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Tabs, WhiteSpace, Badge } from 'antd-mobile';
 import Search from '../Search/Search';
 import Container from '../Container/Container';
@@ -7,12 +7,6 @@ const tabs = [
   { title: <Badge text={'3'}>影池搜索</Badge> },
   { title: <Badge text={'今日(20)'}>最近热映</Badge> },
   { title: <Badge text={'new'}>发现</Badge> },
-];
-
-const tabs2 = [
-  { title: '影池搜索', sub: '1' },
-  { title: '最近热映', sub: '2' },
-  { title: 'Third Tab', sub: '3' },
 ];
 
 const TabsComponent = () => (

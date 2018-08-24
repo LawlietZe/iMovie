@@ -1,7 +1,6 @@
 /* eslint global-require:0, no-nested-ternary:0 */
 import React from 'react';
 import { Menu, ActivityIndicator, NavBar } from 'antd-mobile';
-import { Link } from 'react-router-dom';
 import './Menu.less';
 const data = [
   {

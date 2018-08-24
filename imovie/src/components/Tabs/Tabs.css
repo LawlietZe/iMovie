@@ -1,0 +1,12 @@
+.am-tabs-default-bar-tab{
+    color: #fff;
+}
+.am-tabs-default-bar-content{
+    background: #535953;
+}
+.am-tabs-default-bar-tab-active{
+    color: #EFBB24;
+}
+.am-tabs-default-bar-underline{
+    border: 1px #EFBB24 solid;
+}

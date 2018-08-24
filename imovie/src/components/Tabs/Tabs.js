@@ -2,16 +2,17 @@ import React from 'react';
 import { Tabs, WhiteSpace, Badge } from 'antd-mobile';
 import Search from '../Search/Search';
 import Container from '../Container/Container';
+import NorthAmercia from '../NorthAmercia/NorthAmercia';
+import  './Tabs.css';
 
 const tabs = [
-  { title: <Badge text={'3'}>影池搜索</Badge> },
-  { title: <Badge text={'今日(20)'}>最近热映</Badge> },
-  { title: <Badge text={'new'}>发现</Badge> },
+  { title: <Badge text={'热'}>影池搜索</Badge> },
+  { title: <Badge text={'今日(20)'}>国内院线</Badge> },
+  { title: <Badge text={'new'}>北美票房榜</Badge> },
 ];
 
 const TabsComponent = () => (
   <div>
-    <WhiteSpace  />
     <Tabs tabs={tabs}
       initialPage={1}
       swipeable={false}
@@ -24,8 +25,8 @@ const TabsComponent = () => (
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '', backgroundColor: '#fff' }}>
             <Container></Container>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
-            Content of third tab
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '', backgroundColor: '#fff' }}>
+            <NorthAmercia></NorthAmercia>
         </div>
     </Tabs>
   </div>

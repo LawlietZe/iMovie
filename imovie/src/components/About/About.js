@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import IMenu from '../Menu/Menu';
-import About from '../About/About';
 import TabsComponent from '../Tabs/Tabs';
-import {Route } from 'react-router-dom'
-class Header extends Component {
+class About extends Component {
     constructor(props) {
         super(props);
         // // 设置 initial state
@@ -22,11 +20,9 @@ class Header extends Component {
     render() {
         return (
             <div>
-                <IMenu></IMenu>
-                <Route path="/" component={TabsComponent}></Route>
-                <Route path="/about" component={About}></Route>
+                Hello Bitch
             </div>
         );
     }
 }
-export default Header;
+export default About;

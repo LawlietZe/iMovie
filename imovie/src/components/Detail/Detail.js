@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import api from '../../apis';
 import { Card, WingBlank, NavBar, Icon, Carousel } from 'antd-mobile';
 import './Detail.css';
 class Detail extends Component {
@@ -12,7 +13,7 @@ class Detail extends Component {
     }
     componentDidMount(){
         let _This = this;
-        axios.get(`/v2/movie/subject/${_This.state.id}`)
+        axios.get(`${api}/v2/movie/subject/${_This.state.id}`)
         .then(function (response) {
             console.log(response.data);
             _This.setState({ result: response.data });

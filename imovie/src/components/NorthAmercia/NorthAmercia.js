@@ -3,6 +3,7 @@ import { Card, WhiteSpace } from 'antd-mobile';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import './NorthAmercia.css';
+import api from '../../apis';
 
 class NorthAmercia extends Component {
     constructor(props){
@@ -14,7 +15,7 @@ class NorthAmercia extends Component {
     }
     componentDidMount(){
         let _This = this;
-        axios.get('/v2/movie/us_box')
+        axios.get(`${api}/v2/movie/us_box`)
         .then(function (response) {
             console.log(response);
             _This.setState({ result: response.data.subjects });

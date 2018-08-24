@@ -23,7 +23,7 @@ class Container extends Component {
         this.setState({ start: _started});
         var _This =this;
         if(_started < this.state.total){
-            axios.get(`/v2/movie/in_theaters?city=上海&start=${_started}`)
+            axios.get(`${api}/v2/movie/in_theaters?city=上海&start=${_started}`)
             .then(function (response) {
                 console.log(response);
                 const updateResults = [

@@ -56,9 +56,12 @@ class Container extends Component {
     }
     render(){
         const {result} = this.state;
+        debugger
         if(!result){
-            return null;
-        }
+            return (
+                <img src="//hbimg.b0.upaiyun.com/320abf1ca1ca744569ffe4b463c7991aa7b07d97196ed-qtE82J_fw658" width="400" height="300" alt="loading GIF" data-baiduimageplus-ignore="1" />
+            )
+        }else{
         return(
             <div  style={{ width: '100%' }}>
                 {this.state.loading
@@ -126,6 +129,7 @@ class Container extends Component {
                 }
             </div>
         )
+        }
     }
 }
 export default Container;
